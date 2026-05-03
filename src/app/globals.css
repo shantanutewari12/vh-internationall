@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cream-50: #f7f3eb;
+  --color-cream-100: #efe9db;
+  --color-brass: #c5a059;
+  --color-brass-light: #d4b47d;
+  --color-brass-dark: #9e7d3e;
+  --color-charcoal: #2a2a2a;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --background: var(--color-cream-50);
+  --foreground: var(--color-charcoal);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fcfbf7;
+    --foreground: #1a1a1a;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Lenis & GSAP utilities */
+.lenis.lenis-smooth {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* React Flow Styles */
+.react-flow__node {
+  @apply rounded-xl border-none shadow-2xl;
+}
+
+.react-flow__handle {
+  @apply bg-brass border-2 border-white;
+}
+
+.react-flow__edge-path {
+  @apply stroke-brass stroke-[3];
 }
