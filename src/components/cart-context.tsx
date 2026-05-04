@@ -14,9 +14,18 @@ interface CartItem {
   description?: string;
 }
 
+interface ProductInput {
+  id: string;
+  name: string;
+  price: number;
+  images: string[];
+  category?: string;
+  description?: string;
+}
+
 interface CartContextType {
   cart: CartItem[];
-  addToCart: (product: any) => void;
+  addToCart: (product: ProductInput) => void;
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
@@ -33,7 +42,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const savedCart = localStorage.getItem("vh-cart");
     if (savedCart) {
-      setCart(JSON.parse(savedCart));
+      setTimeout(() => setCart(JSON.parse(savedCart)), 0);
     }
   }, []);
 
@@ -42,7 +51,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("vh-cart", JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product: any) => {
+  const addToCart = (product: ProductInput) => {
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
