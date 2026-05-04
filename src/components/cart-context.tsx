@@ -9,6 +9,9 @@ interface CartItem {
   price: number;
   image: string;
   quantity: number;
+  images?: string[];
+  category?: string;
+  description?: string;
 }
 
 interface CartContextType {
@@ -57,6 +60,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           price: product.price,
           image: product.images[0] || "/hero.png",
           quantity: 1,
+          images: product.images,
+          category: product.category,
+          description: product.description,
         },
       ];
     });
