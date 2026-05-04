@@ -9,6 +9,8 @@ import { Trash2, Plus, Minus, ArrowLeft, ArrowRight, CheckCircle2, Loader2, Cred
 import { motion, AnimatePresence } from "framer-motion";
 import { Footer } from "@/components/ui/footer";
 import { toast } from "sonner";
+import confetti from "canvas-confetti";
+import { playSuccessChime } from "@/lib/sounds";
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, totalPrice, totalItems, clearCart } = useCart();
@@ -27,6 +29,28 @@ export default function CartPage() {
       setCheckoutState("success");
       clearCart();
       toast.success("Payment successful!");
+      
+      // Trigger sound and visual effects
+      playSuccessChime();
+      
+      const duration = 3 * 1000;
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+      const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
+
+      const interval: any = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: ['#c5a059', '#d4b47d', '#ffffff'] }));
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }, colors: ['#c5a059', '#d4b47d', '#ffffff'] }));
+      }, 250);
+      
     }, 3000);
   };
 

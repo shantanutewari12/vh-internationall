@@ -68,8 +68,8 @@ export const ProductCard = React.memo(function ProductCard({ product }: { produc
           />
         </div>
         
-        {/* Overlay Actions */}
-        <div className="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-6 backdrop-blur-[2px]">
+        {/* Overlay Actions (Desktop Only) */}
+        <div className="absolute inset-0 bg-charcoal/40 opacity-0 hidden lg:flex group-hover:opacity-100 transition-all duration-500 flex-col items-center justify-center gap-6 backdrop-blur-[2px]">
           <button 
             onClick={() => addToCart(product)}
             className="bg-white text-charcoal px-8 py-4 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-brass hover:text-white transition-all duration-500 transform translate-y-4 group-hover:translate-y-0"
@@ -107,9 +107,23 @@ export const ProductCard = React.memo(function ProductCard({ product }: { produc
       <div className="py-6 sm:py-8 px-2 text-center">
         <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-charcoal mb-2 sm:mb-3 tracking-tight group-hover:text-brass transition-colors duration-500">{product.name}</h3>
         <p className="text-[10px] sm:text-[12px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold text-brass mb-3 sm:mb-4">₹{product.price.toLocaleString()}</p>
-        <p className="text-[10px] sm:text-xs text-foreground/40 font-light leading-relaxed max-w-[250px] mx-auto line-clamp-2 italic opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+        <p className="text-[10px] sm:text-xs text-foreground/40 font-light leading-relaxed max-w-[250px] mx-auto line-clamp-2 italic opacity-0 hidden lg:block group-hover:opacity-100 transition-opacity duration-700">
           {product.description}
         </p>
+
+        {/* Mobile Action Button */}
+        <div className="mt-4 lg:hidden">
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              addToCart(product);
+            }}
+            className="w-full bg-charcoal text-white py-3 rounded-full text-[10px] uppercase tracking-widest font-bold flex items-center justify-center gap-2 active:bg-brass transition-colors"
+          >
+            <ShoppingBag size={14} /> Add to Bag
+          </button>
+        </div>
       </div>
     </div>
   );

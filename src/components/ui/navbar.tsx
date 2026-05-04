@@ -103,7 +103,7 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 bg-cream-50 z-[110] transition-transform duration-700 md:hidden ${
+      <div className={`fixed inset-0 bg-white text-charcoal z-[110] transition-transform duration-700 md:hidden ${
         isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}>
         <div className="p-8 flex flex-col h-full">

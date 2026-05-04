@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { toast } from "sonner";
+import { playAddToCartSound } from "@/lib/sounds";
 
 interface CartItem {
   id: string;
@@ -52,6 +53,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [cart]);
 
   const addToCart = (product: ProductInput) => {
+    playAddToCartSound();
+    
     setCart((prev) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
