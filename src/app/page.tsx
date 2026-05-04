@@ -91,20 +91,20 @@ export default function Home() {
           <p className="hero-subtitle text-[10px] uppercase tracking-[0.6em] mb-8 font-bold text-brass drop-shadow-lg opacity-0 translate-y-5">
             Est. 1974 • Artisanal Excellence
           </p>
-          <h1 className="hero-title text-[8rem] md:text-[18rem] font-serif leading-[0.8] tracking-tighter mb-12 flex flex-col items-center">
+          <h1 className="hero-title text-[5rem] sm:text-[8rem] md:text-[18rem] font-serif leading-[0.8] tracking-tighter mb-12 flex flex-col items-center">
             <span className="inline-block opacity-0 translate-y-24">VH</span>
-            <span className="inline-block italic text-brass -mt-4 md:-mt-10 opacity-0 translate-y-24">LEGACY</span>
+            <span className="inline-block italic text-brass -mt-2 sm:-mt-4 md:-mt-10 opacity-0 translate-y-24">LEGACY</span>
           </h1>
-          <div className="hero-subtitle flex flex-col md:flex-row items-center justify-center gap-10 mt-12 opacity-0 translate-y-5">
+          <div className="hero-subtitle flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mt-12 opacity-0 translate-y-5">
             <Link 
               href="/collections" 
-              className="bg-white text-charcoal px-12 py-6 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-brass hover:text-white transition-all duration-700 shadow-2xl"
+              className="bg-white text-charcoal px-8 py-4 sm:px-12 sm:py-6 rounded-full text-[10px] uppercase tracking-widest font-bold hover:bg-brass hover:text-white transition-all duration-700 shadow-2xl"
             >
               The 2026 Collection
             </Link>
             <Link 
               href="/about" 
-              className="text-white text-[10px] uppercase tracking-widest font-bold border-b border-white pb-2 hover:text-brass hover:border-brass transition-all duration-500"
+              className="text-white text-[10px] uppercase tracking-widest font-bold border-b border-white pb-2 hover:text-brass hover:border-brass transition-all duration-500 mt-4 sm:mt-0"
             >
               Our Heritage Story
             </Link>
@@ -113,11 +113,11 @@ export default function Home() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-60 px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-32 items-center">
+      <section className="py-24 md:py-60 px-6 sm:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
           <div className="reveal-text">
             <p className="text-brass tracking-[0.4em] uppercase text-[10px] font-bold mb-8 italic">The VH Philosophy</p>
-            <h2 className="text-6xl md:text-8xl font-serif mb-12 text-charcoal leading-none">Metal with <br /><span className="italic">Soul</span></h2>
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-serif mb-8 md:mb-12 text-charcoal leading-none">Metal with <br /><span className="italic">Soul</span></h2>
             <p className="text-xl text-foreground/50 leading-relaxed font-light mb-10 max-w-md">
               We believe that every brass artifact is a vessel of history. In our Moradabad furnaces, we blend ancient "Thathera" casting techniques with a modern editorial aesthetic.
             </p>
@@ -140,12 +140,12 @@ export default function Home() {
       </section>
 
       {/* Featured Collection */}
-      <section className="py-40 bg-charcoal rounded-[4rem] mx-4 md:mx-10 my-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
+      <section className="py-24 md:py-40 bg-charcoal rounded-[2rem] md:rounded-[4rem] mx-4 md:mx-10 my-10 md:my-20">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8 md:gap-10">
             <div className="reveal-text">
               <p className="text-brass tracking-[0.4em] uppercase text-[10px] font-bold mb-6">Selected Pieces</p>
-              <h2 className="text-6xl md:text-9xl font-serif text-cream-50 leading-none">Signature <br /><span className="italic">Artifacts</span></h2>
+              <h2 className="text-5xl sm:text-6xl md:text-9xl font-serif text-cream-50 leading-none">Signature <br className="hidden sm:block" /><span className="italic">Artifacts</span></h2>
             </div>
             <Link 
               href="/collections" 
@@ -164,11 +164,11 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-60 px-8 overflow-hidden">
+      <section className="py-24 md:py-60 px-6 sm:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-brass tracking-[0.4em] uppercase text-[10px] font-bold mb-12">The Voice of Heritage</p>
           <div className="relative">
-            <Quote className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-20 text-brass/10 w-40 h-40" />
+            <Quote className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 md:-translate-y-20 text-brass/10 w-24 h-24 md:w-40 md:h-40" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
               {[
                 { name: "Arjun Sharma", role: "Interior Architect", text: "The weight and finish of VH brass is unlike anything else. It brings a soul to modern minimalism." },
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* Big Call to Action */}
-      <section className="h-[90vh] relative overflow-hidden flex items-center justify-center mx-4 md:mx-10 mb-10 rounded-[4rem]">
+      <section className="h-[70vh] md:h-[90vh] relative overflow-hidden flex items-center justify-center mx-4 md:mx-10 mb-10 rounded-[2rem] md:rounded-[4rem]">
         <Image
           src="/hero.png"
           alt="CTA Background"
@@ -199,16 +199,16 @@ export default function Home() {
           className="object-cover grayscale"
         />
         <div className="absolute inset-0 bg-charcoal/80 backdrop-blur-[3px]" />
-        <div className="relative z-10 text-center text-white px-8 max-w-4xl">
-          <h2 className="text-6xl md:text-[12rem] font-serif mb-12 leading-none tracking-tighter">THE <span className="italic text-brass">GOLDEN</span> LEGACY</h2>
-          <p className="text-xl md:text-2xl font-light text-cream-50/60 mb-16 leading-relaxed max-w-2xl mx-auto italic">
+        <div className="relative z-10 text-center text-white px-6 sm:px-8 max-w-4xl">
+          <h2 className="text-5xl sm:text-6xl md:text-[12rem] font-serif mb-8 md:mb-12 leading-none tracking-tighter">THE <span className="italic text-brass">GOLDEN</span> LEGACY</h2>
+          <p className="text-lg sm:text-xl md:text-2xl font-light text-cream-50/60 mb-10 md:mb-16 leading-relaxed max-w-2xl mx-auto italic">
             Become a part of the VH story. Join thousands of connoisseurs who celebrate the art of high-end brass.
           </p>
           <Link 
             href="/collections" 
-            className="inline-flex items-center gap-6 bg-brass text-white px-16 py-8 rounded-full text-xs uppercase tracking-[0.4em] font-bold hover:bg-white hover:text-charcoal transition-all duration-700 shadow-2xl group"
+            className="inline-flex items-center gap-4 md:gap-6 bg-brass text-white px-8 py-4 md:px-16 md:py-8 rounded-full text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.4em] font-bold hover:bg-white hover:text-charcoal transition-all duration-700 shadow-2xl group"
           >
-            Start Your Collection <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+            Start Your Collection <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
           </Link>
         </div>
       </section>
