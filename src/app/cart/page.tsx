@@ -34,12 +34,12 @@ export default function CartPage() {
     return (
       <main className="min-h-screen bg-cream-50 flex flex-col">
         <Navbar />
-        <div className="flex-grow flex flex-col items-center justify-center text-center px-8 py-40">
+        <div className="flex-grow flex flex-col items-center justify-center text-center px-6 md:px-8 py-24 md:py-40">
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", duration: 0.8 }}>
-            <CheckCircle2 size={80} className="text-green-600 mb-8 mx-auto" />
+            <CheckCircle2 size={80} className="text-green-600 mb-8 mx-auto w-16 h-16 md:w-20 md:h-20" />
           </motion.div>
-          <h1 className="text-6xl md:text-8xl font-serif mb-6 text-charcoal leading-none">Order <span className="italic text-brass">Confirmed</span></h1>
-          <p className="text-foreground/50 max-w-md mb-12 font-light text-lg">
+          <h1 className="text-5xl md:text-8xl font-serif mb-6 text-charcoal leading-none">Order <span className="italic text-brass">Confirmed</span></h1>
+          <p className="text-foreground/50 max-w-md mb-10 md:mb-12 font-light text-base md:text-lg">
             Thank you for trusting VH International. Your artisanal artifacts are being prepared with the utmost care.
           </p>
           <Link 
@@ -59,9 +59,9 @@ export default function CartPage() {
     return (
       <main className="min-h-screen bg-cream-50 flex flex-col">
         <Navbar />
-        <div className="flex-grow flex flex-col items-center justify-center text-center px-8 py-40">
-          <h1 className="text-6xl md:text-8xl font-serif mb-8 text-charcoal leading-none">Your bag <br />is <span className="italic text-brass">empty</span>.</h1>
-          <p className="text-foreground/50 max-w-md mb-12 font-light">
+        <div className="flex-grow flex flex-col items-center justify-center text-center px-6 md:px-8 py-24 md:py-40">
+          <h1 className="text-5xl md:text-8xl font-serif mb-8 text-charcoal leading-none">Your bag <br />is <span className="italic text-brass">empty</span>.</h1>
+          <p className="text-foreground/50 max-w-md mb-10 md:mb-12 font-light text-base md:text-lg">
             Each artifact in our collection is waiting for its story to begin in your home.
           </p>
           <Link 
@@ -93,10 +93,10 @@ export default function CartPage() {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-white w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl relative"
+              className="bg-white w-full max-w-lg rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl relative max-h-[90vh] overflow-y-auto"
             >
               {/* Modal Header */}
-              <div className="bg-charcoal text-white p-8 flex justify-between items-center">
+              <div className="bg-charcoal text-white p-6 md:p-8 flex justify-between items-center sticky top-0 z-10">
                 <div>
                   <h3 className="text-2xl font-serif mb-1">VH Checkout</h3>
                   <p className="text-[10px] uppercase tracking-widest text-brass font-bold">Secure Payment Gateway</p>
@@ -109,10 +109,10 @@ export default function CartPage() {
               </div>
 
               {/* Modal Body */}
-              <div className="p-8">
-                <div className="flex justify-between items-end mb-8 pb-8 border-b border-gray-100">
+              <div className="p-6 md:p-8">
+                <div className="flex justify-between items-end mb-6 md:mb-8 pb-6 md:pb-8 border-b border-gray-100">
                   <span className="text-gray-500 font-light">Amount to pay</span>
-                  <span className="text-4xl font-serif text-charcoal">₹{totalPrice.toLocaleString()}</span>
+                  <span className="text-3xl md:text-4xl font-serif text-charcoal">₹{totalPrice.toLocaleString()}</span>
                 </div>
 
                 {checkoutState === "processing" ? (
@@ -177,13 +177,13 @@ export default function CartPage() {
         )}
       </AnimatePresence>
 
-      <div className="max-w-7xl mx-auto w-full flex-grow px-8 pb-20 z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+      <div className="max-w-7xl mx-auto w-full flex-grow px-6 md:px-8 pb-10 md:pb-20 z-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-4 md:gap-8">
           <div>
-            <h1 className="text-6xl md:text-[10rem] font-serif leading-none tracking-tighter">Your Bag</h1>
-            <p className="text-brass uppercase tracking-[0.4em] text-xs font-bold mt-4">Review your selected artifacts</p>
+            <h1 className="text-5xl md:text-[10rem] font-serif leading-none tracking-tighter">Your Bag</h1>
+            <p className="text-brass uppercase tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-xs font-bold mt-2 md:mt-4">Review your selected artifacts</p>
           </div>
-          <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-charcoal/40">Total Pieces: {totalItems}</p>
+          <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-charcoal/40 mt-4 md:mt-0">Total Pieces: {totalItems}</p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-24">
@@ -198,9 +198,9 @@ export default function CartPage() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9, x: -50 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="group flex flex-col md:flex-row items-start gap-10 p-6 bg-white/50 backdrop-blur-sm rounded-[2rem] border border-white hover:border-brass/30 transition-all duration-500 hover:shadow-xl"
+                  className="group flex flex-col md:flex-row items-start gap-6 md:gap-10 p-4 md:p-6 bg-white/50 backdrop-blur-sm rounded-2xl md:rounded-[2rem] border border-white hover:border-brass/30 transition-all duration-500 hover:shadow-xl"
                 >
-                  <div className="relative w-full md:w-56 h-72 bg-cream-100 rounded-3xl overflow-hidden flex-shrink-0 shadow-lg group-hover:shadow-2xl transition-all duration-700">
+                  <div className="relative w-full md:w-56 h-48 md:h-72 bg-cream-100 rounded-xl md:rounded-3xl overflow-hidden flex-shrink-0 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                     <Image
                       src={item.images?.[0] || item.image || "https://images.unsplash.com/photo-1542332213-9b5a5a3fab35?q=80&w=1000&auto=format&fit=crop"}
                       alt={item.name}
@@ -209,11 +209,11 @@ export default function CartPage() {
                     />
                   </div>
                   
-                  <div className="flex-grow flex flex-col justify-between w-full h-full py-4">
-                    <div className="flex justify-between items-start">
+                  <div className="flex-grow flex flex-col justify-between w-full h-full py-2 md:py-4">
+                    <div className="flex justify-between items-start gap-4">
                       <div>
-                        <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-brass mb-2">{item.category || "Artisanal"}</p>
-                        <h3 className="text-4xl font-serif mb-2 text-charcoal">{item.name}</h3>
+                        <p className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-bold text-brass mb-2">{item.category || "Artisanal"}</p>
+                        <h3 className="text-2xl md:text-4xl font-serif mb-2 text-charcoal">{item.name}</h3>
                         <p className="text-sm text-foreground/40 font-light leading-relaxed italic max-w-sm">"{item.description}"</p>
                       </div>
                       <button 
@@ -225,8 +225,8 @@ export default function CartPage() {
                       </button>
                     </div>
                     
-                    <div className="flex items-end justify-between mt-12">
-                      <div className="flex items-center gap-6 bg-cream-50 px-6 py-3 rounded-full border border-charcoal/5">
+                    <div className="flex items-end justify-between mt-6 md:mt-12 w-full">
+                      <div className="flex items-center gap-4 md:gap-6 bg-cream-50 px-4 md:px-6 py-2 md:py-3 rounded-full border border-charcoal/5">
                         <button 
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           className="hover:text-brass transition-colors p-1"
@@ -241,7 +241,7 @@ export default function CartPage() {
                           <Plus size={14} />
                         </button>
                       </div>
-                      <span className="text-4xl font-serif text-charcoal">₹{(item.price * item.quantity).toLocaleString()}</span>
+                      <span className="text-2xl md:text-4xl font-serif text-charcoal">₹{(item.price * item.quantity).toLocaleString()}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -251,10 +251,10 @@ export default function CartPage() {
 
           {/* Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white/80 backdrop-blur-xl p-12 rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-white sticky top-40">
-              <h2 className="text-5xl font-serif mb-12 text-charcoal italic">The Total</h2>
+            <div className="bg-white/80 backdrop-blur-xl p-6 md:p-12 rounded-2xl md:rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-white sticky top-24 md:top-40">
+              <h2 className="text-4xl md:text-5xl font-serif mb-8 md:mb-12 text-charcoal italic">The Total</h2>
               
-              <div className="space-y-8 text-[10px] uppercase tracking-[0.3em] font-bold">
+              <div className="space-y-6 md:space-y-8 text-[10px] uppercase tracking-[0.3em] font-bold">
                 <div className="flex justify-between text-charcoal/40">
                   <span>Subtotal</span>
                   <span className="text-charcoal font-black">₹{totalPrice.toLocaleString()}</span>
@@ -267,15 +267,15 @@ export default function CartPage() {
                   <span>Customs & Duty</span>
                   <span className="text-charcoal font-black">₹0</span>
                 </div>
-                <div className="pt-10 border-t border-charcoal/10 flex justify-between items-end">
-                  <span className="text-charcoal/60 text-[10px] uppercase tracking-[0.2em] mb-2">Grand Total</span>
-                  <span className="text-5xl font-serif text-charcoal tracking-tight">₹{totalPrice.toLocaleString()}</span>
+                <div className="pt-8 md:pt-10 border-t border-charcoal/10 flex justify-between items-end">
+                  <span className="text-charcoal/60 text-[10px] uppercase tracking-[0.2em] mb-1 md:mb-2">Grand Total</span>
+                  <span className="text-3xl md:text-5xl font-serif text-charcoal tracking-tight">₹{totalPrice.toLocaleString()}</span>
                 </div>
               </div>
 
               <button 
                 onClick={handleCheckoutClick}
-                className="w-full bg-charcoal text-white py-8 rounded-full mt-12 uppercase tracking-[0.3em] text-xs font-bold hover:bg-brass transition-all duration-700 flex items-center justify-center gap-4 group shadow-xl overflow-hidden relative"
+                className="w-full bg-charcoal text-white py-6 md:py-8 rounded-full mt-8 md:mt-12 uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-bold hover:bg-brass transition-all duration-700 flex items-center justify-center gap-4 group shadow-xl overflow-hidden relative"
               >
                 <span className="flex items-center gap-4 relative z-10">Proceed to Checkout <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" /></span>
                 <div className="absolute inset-0 bg-brass transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 z-0"></div>
