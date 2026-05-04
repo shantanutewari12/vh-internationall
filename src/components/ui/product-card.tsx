@@ -8,13 +8,7 @@ import { useFavorites } from "@/components/favorites-context";
 import { ShoppingBag, Eye, Heart } from "lucide-react";
 import Link from "next/link";
 
-interface Product {
-  id: string;
-  name: string;
-  price: number;
-  description: string;
-  images: string[];
-}
+import { Product } from "@/data/products";
 
 export const ProductCard = React.memo(function ProductCard({ product }: { product: Product }) {
   const cardRef = useRef<HTMLDivElement>(null);

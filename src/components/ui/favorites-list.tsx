@@ -41,7 +41,7 @@ export function FavoritesList() {
           >
             <div className="relative w-full sm:w-28 h-32 rounded-xl overflow-hidden flex-shrink-0 bg-cream-100 shadow-inner">
               <Image
-                src={product.images?.[0] || product.image || ""}
+                src={product.images?.[0] || ""}
                 alt={product.name}
                 fill
                 sizes="120px"

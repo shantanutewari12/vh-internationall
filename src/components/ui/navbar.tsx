@@ -49,7 +49,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             {isLoaded ? (
               isSignedIn ? (
-                <UserButton afterSignOutUrl="/">
+                <UserButton>
                   <UserButton.UserProfilePage
                     label="Favorites"
                     labelIcon={<Heart size={16} />}
@@ -131,7 +131,7 @@ export function Navbar() {
             )}
             {isSignedIn && (
               <div className="flex items-center gap-4">
-                <UserButton afterSignOutUrl="/" showName />
+                <UserButton showName />
               </div>
             )}
           </div>
