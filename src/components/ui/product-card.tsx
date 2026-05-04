@@ -104,10 +104,10 @@ export const ProductCard = React.memo(function ProductCard({ product }: { produc
         </button>
       </div>
 
-      <div className="py-8 px-2 text-center">
-        <h3 className="text-xl md:text-2xl font-serif text-charcoal mb-3 tracking-tight group-hover:text-brass transition-colors duration-500">{product.name}</h3>
-        <p className="text-[12px] uppercase tracking-[0.3em] font-bold text-brass mb-4">₹{product.price.toLocaleString()}</p>
-        <p className="text-xs text-foreground/40 font-light leading-relaxed max-w-[250px] mx-auto line-clamp-2 italic opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+      <div className="py-6 sm:py-8 px-2 text-center">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-charcoal mb-2 sm:mb-3 tracking-tight group-hover:text-brass transition-colors duration-500">{product.name}</h3>
+        <p className="text-[10px] sm:text-[12px] uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold text-brass mb-3 sm:mb-4">₹{product.price.toLocaleString()}</p>
+        <p className="text-[10px] sm:text-xs text-foreground/40 font-light leading-relaxed max-w-[250px] mx-auto line-clamp-2 italic opacity-0 group-hover:opacity-100 transition-opacity duration-700">
           {product.description}
         </p>
       </div>
