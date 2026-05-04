@@ -4,8 +4,8 @@ import { Instagram, Twitter, Facebook, Mail, MapPin, Phone } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="w-full overflow-hidden bg-[#1a1a1a] text-[#f7f3eb] pt-20 pb-10 px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+    <footer className="w-full overflow-hidden bg-[#1a1a1a] text-[#f7f3eb] pt-12 md:pt-20 pb-8 md:pb-10 px-6 md:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 mb-12 md:mb-20">
         {/* Brand Section */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
@@ -64,9 +64,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-cream-50/30">
+      <div className="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-cream-50/30 text-center md:text-left">
         <p>© 2026 VH INTERNATIONAL BRASS EMPORIUM. ALL RIGHTS RESERVED.</p>
-        <div className="flex gap-8">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
           <span>Designed for Excellence</span>
           <span>Sourced with Integrity</span>
         </div>
