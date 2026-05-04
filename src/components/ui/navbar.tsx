@@ -45,8 +45,8 @@ export function Navbar() {
         </div>
 
         {/* Right: Actions */}
-        <div className="flex items-center gap-6 justify-end">
-          <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-6 justify-end">
+          <div className="flex items-center gap-2 sm:gap-4">
             {isLoaded ? (
               isSignedIn ? (
                 <UserButton>
@@ -94,7 +94,7 @@ export function Navbar() {
           </Link>
 
           <button 
-            className="md:hidden p-2 hover:text-brass transition-colors"
+            className="md:hidden p-1 sm:p-2 hover:text-brass transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <Menu size={20} />
@@ -114,7 +114,7 @@ export function Navbar() {
             </button>
           </div>
           
-          <div className="flex flex-col gap-8 text-4xl font-serif">
+          <div className="flex flex-col gap-6 sm:gap-8 text-3xl sm:text-4xl font-serif">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             <Link href="/collections" onClick={() => setIsMobileMenuOpen(false)}>Collections</Link>
             <Link href="/the-craft" onClick={() => setIsMobileMenuOpen(false)}>The Craft</Link>
