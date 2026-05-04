@@ -38,5 +38,8 @@
     "tailwindcss": "^4",
     "trigger.dev": "^4.4.4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "picomatch": "^4.0.4"
   }
 }
