@@ -18,7 +18,7 @@ export default function ProductDetailPage() {
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
-    <main className="min-h-screen bg-cream-50 pt-40 pb-20 px-8 flex flex-col">
+    <main className="min-h-screen bg-cream-50 pt-24 md:pt-40 pb-10 md:pb-20 px-6 md:px-8 flex flex-col">
       <Navbar />
       
       <div className="max-w-7xl mx-auto w-full flex-grow">
@@ -26,7 +26,7 @@ export default function ProductDetailPage() {
           <ArrowLeft size={14} className="group-hover:-translate-x-2 transition-transform" /> Back to Collections
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32">
           {/* Left: Images */}
           <div className="space-y-8">
             <motion.div 
@@ -44,12 +44,12 @@ export default function ProductDetailPage() {
             </motion.div>
             
             {product.images.length > 1 && (
-              <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+              <div className="flex gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-hide">
                 {product.images.map((img, i) => (
                   <button 
                     key={i}
                     onClick={() => setSelectedImage(i)}
-                    className={`relative w-24 h-32 rounded-2xl overflow-hidden border-2 transition-all duration-500 flex-shrink-0 ${
+                    className={`relative w-20 h-28 md:w-24 md:h-32 rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all duration-500 flex-shrink-0 ${
                       selectedImage === i ? "border-brass scale-105 shadow-lg" : "border-transparent opacity-40 hover:opacity-100"
                     }`}
                   >
@@ -66,14 +66,14 @@ export default function ProductDetailPage() {
               <p className="text-brass font-bold uppercase tracking-[0.5em] text-[10px] animate-slide-up">{(product as any).category || "Artisanal Collection"}</p>
             </div>
             
-            <h1 className="text-6xl md:text-9xl font-serif mb-8 text-charcoal leading-[0.9] tracking-tighter">{product.name}</h1>
-            <p className="text-4xl font-serif text-brass mb-12 tracking-tight italic">₹{product.price.toLocaleString()}</p>
+            <h1 className="text-5xl md:text-9xl font-serif mb-6 md:mb-8 text-charcoal leading-[0.9] tracking-tighter">{product.name}</h1>
+            <p className="text-3xl md:text-4xl font-serif text-brass mb-8 md:mb-12 tracking-tight italic">₹{product.price.toLocaleString()}</p>
             
             <div className="prose prose-lg text-foreground/50 mb-16 font-light leading-relaxed max-w-lg">
               <p>{product.description}</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-12 mb-16 py-12 border-y border-charcoal/5">
+            <div className="grid grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16 py-8 md:py-12 border-y border-charcoal/5">
               {[
                 { label: "Material", value: "High-Purity Artisan Brass" },
                 { label: "Technique", value: "Ancient Sand Casting" },
@@ -87,20 +87,20 @@ export default function ProductDetailPage() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-8">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-8">
               <button 
                 onClick={() => addToCart(product)}
-                className="flex-grow bg-charcoal text-white py-8 rounded-full uppercase tracking-[0.3em] text-xs font-bold hover:bg-brass transition-all duration-700 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] flex items-center justify-center gap-4 group"
+                className="flex-grow bg-charcoal text-white py-6 md:py-8 rounded-full uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-bold hover:bg-brass transition-all duration-700 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] flex items-center justify-center gap-4 group"
               >
                 Add to Bag <ShoppingBag size={14} className="group-hover:scale-110 transition-transform" />
               </button>
-              <button className="p-8 rounded-full border border-charcoal/10 hover:bg-white hover:border-brass hover:text-brass transition-all duration-700 shadow-sm group">
+              <button className="p-6 md:p-8 rounded-full border border-charcoal/10 hover:bg-white hover:border-brass hover:text-brass transition-all duration-700 shadow-sm group">
                 <Heart size={20} className="group-hover:fill-current" />
               </button>
             </div>
 
             {/* Badges */}
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-10">
+            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
               <div className="flex items-center gap-5 text-[9px] uppercase tracking-[0.2em] font-bold text-foreground/40">
                 <Shield size={18} className="text-brass" /> 2-Year Artisanal Warranty
               </div>
